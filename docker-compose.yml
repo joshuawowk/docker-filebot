@@ -1,0 +1,14 @@
+version: '3'
+services:
+  filebot:
+    image: jlesage/filebot
+    ports:
+      - "5800:5800"
+    environment:
+      - DARK_MODE: '1'
+      - WEB_AUTHENTICATION: '1'
+      - WEB_AUTHENTICATION_USERNAME: ${WEB_UI_USERNAME}
+      - WEB_AUTHENTICATION_PASSWORD: ${WEB_UI_PASSWORD}
+    volumes:
+      - "/home/jwowk/docker/appdata/filebot:/config:rw"
+      - "/mnt/storage_sata/media:/storage:rw"
