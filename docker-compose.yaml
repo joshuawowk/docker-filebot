@@ -1,0 +1,20 @@
+version: '3'
+services:
+  filebot:
+    image: jlesage/filebot
+    ports:
+      - 5888:5800
+    volumes:
+      - /docker/filebot/appdata:/config
+      - /home/jwowk:/home/jwowk
+      - /mnt/storage_disk:/mnt/storage_disk
+      - /mnt/storage_disk/media/z_filebot_watch:/watch
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      USER_ID: 1000
+      GROUP_ID: 1000
+      KEEP_APP_RUNNING: 1
+      DARK_MODE: 1
+      WEB_FILE_MANAGER: 1
+      WEB_FILE_MANAGER_ALLOWED_PATHS: ALL
+      WEB_LISTENING_PORT: 5888
