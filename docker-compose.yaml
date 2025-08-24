@@ -25,3 +25,4 @@ services:
       AMC_SERIES_FORMAT: "{ drive }/media/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
       AMC_MOVIE_FORMAT: "{ drive }/media/movies/{n.space('.')}.{y}/{n.space('.')}.{y}.{source}.{vf}.{vc}.{af}.{ac}"
       AMC_PROCESS_MUSIC: n
+      AMC_OUTPUT_DIR: /mnt/storage_disk/
