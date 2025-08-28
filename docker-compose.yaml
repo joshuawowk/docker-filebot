@@ -24,7 +24,7 @@ services:
       AMC_ARTWORK: y
       AMC_SERIES_FORMAT: "/mnt/storage_disk/media/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
       # AMC_SERIES_FORMAT: "/mnt/storage_disk/media/z_filebot_output/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
-      # AMC_MOVIE_FORMAT: "/mnt/storage_disk/media/movies/{n.space('.')}.{y}/{n.space('.')}.{y}.{source}.{vf}.{vc}.{af}.{ac}"
+      AMC_MOVIE_FORMAT: "/mnt/storage_disk/media/movies/{n.space('.')}.{y}/{n.space('.')}.{y}.{source}.{vf}.{vc}.{af}.{ac}"
       # AMC_MOVIE_FORMAT: "/mnt/storage_disk/media/z_filebot_output/movies/{n.space('_')}_{y}/{n.space('.')}.{y}.{vf}.{vc}.{af}.{ac}.{group}"
       AMC_PROCESS_MUSIC: n
       AMC_OUTPUT_DIR: /mnt/storage_disk/
