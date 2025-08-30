@@ -7,24 +7,21 @@ services:
     volumes:
       - /docker/filebot/appdata:/config
       - /home/jwowk:/home/jwowk
-      - /mnt/storage_disk:/mnt/storage_disk
-      - /mnt/storage_disk/media/z_filebot_watch:/watch
-      - /mnt/storage_disk/media/z_filebot_output:/output
+      - /home/jwowk/media_temp/filebot_watch:/watch
+      - /home/jwowk/media_temp/filebot_temp:/output
       - /etc/localtime:/etc/localtime:ro
     environment:
       USER_ID: 1000
       GROUP_ID: 1000
       KEEP_APP_RUNNING: 1
       DARK_MODE: 1
-      WEB_FILE_MANAGER: 1
-      WEB_FILE_MANAGER_ALLOWED_PATHS: ALL
+      WEB_FILE_MANAGER: 0
+      # WEB_FILE_MANAGER_ALLOWED_PATHS: ALL
       WEB_LISTENING_PORT: 5800
       AMC_INPUT_STABLE_TIME: 20
       AMC_ACTION: copy
       AMC_ARTWORK: y
-      AMC_SERIES_FORMAT: "/mnt/storage_disk/media/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
-      # AMC_SERIES_FORMAT: "/mnt/storage_disk/media/z_filebot_output/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
-      AMC_MOVIE_FORMAT: "/mnt/storage_disk/media/movies/{n.space('.')}.{y}/{n.space('.')}.{y}.{source}.{vf}.{vc}.{af}.{ac}"
-      # AMC_MOVIE_FORMAT: "/mnt/storage_disk/media/z_filebot_output/movies/{n.space('_')}_{y}/{n.space('.')}.{y}.{vf}.{vc}.{af}.{ac}.{group}"
+      AMC_SERIES_FORMAT: "/home/jwowk/media/tv/{n}/{'season_'+s}/{n}_{s00e00}_{t}"
+      AMC_MOVIE_FORMAT: "/home/jwowk/media/movies/{n.space('.')}.{y}/{n.space('.')}.{y}.{source}.{vf}.{vc}.{af}.{ac}"
       AMC_PROCESS_MUSIC: n
-      AMC_OUTPUT_DIR: /mnt/storage_disk/
+      AMC_OUTPUT_DIR: "/home/jwowk"
