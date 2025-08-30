@@ -6,7 +6,8 @@ services:
       - 5888:5800
     volumes:
       - /docker/filebot/appdata:/config
-      - /home/jwowk:/home/jwowk
+      - /home/jwowk:/storage
+      - /zpool3/zpool3/media:/home/jwowk/media
       - /home/jwowk/media_temp/filebot_watch:/watch
       - /home/jwowk/media_temp/filebot_temp:/output
       - /etc/localtime:/etc/localtime:ro
